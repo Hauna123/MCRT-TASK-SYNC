@@ -20,7 +20,6 @@
         #frame-container {
             width: 100vw;
             height: 100vh;
-            overflow: hidden;
             position: relative;
         }
         iframe {
@@ -28,11 +27,23 @@
             height: 100%;
             border: none;
         }
+        /* Ensure responsiveness */
+        @media (max-width: 768px) {
+            #frame-container {
+                height: auto;
+            }
+            iframe {
+                height: 90vh; /* Keeps some space at the bottom */
+            }
+        }
     </style>
 </head>
 <body>
     <div id="frame-container">
-        <iframe id="embeddedPage" src="https://taupe-rabanadas-5d5c35.netlify.app/" loading="lazy"></iframe>
+        <iframe id="embeddedPage" src="https://taupe-rabanadas-5d5c35.netlify.app/" loading="lazy">
+            Your browser does not support iframes. 
+            <a href="https://taupe-rabanadas-5d5c35.netlify.app/" target="_blank">Click here</a> to view the content.
+        </iframe>
     </div>
 </body>
 </html>
